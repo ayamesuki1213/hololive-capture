@@ -154,7 +154,7 @@
             </div>
 
             <div id="camera-ui" class="hidden w-full h-full flex flex-col landscape:flex-row items-center justify-center gap-6 landscape:gap-10">
-                <div id="camera-container" class="w-full max-w-3xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl relative border-4 border-white/50 shrink min-h-0">
+                <div id="camera-container" class="w-full max-w-3xl aspect-[3/4] sm:aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl relative border-4 border-white/50 shrink min-h-0 max-h-[60vh] md:max-h-[70vh]">
                     <video id="camera-feed" class="w-full h-full object-cover" autoplay playsinline muted></video>
                     <canvas id="snapshot-canvas" class="hidden"></canvas>
                     <div class="absolute inset-0 pointer-events-none flex flex-col justify-between p-4 z-10">
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 
-                <div class="flex items-center justify-center flex-shrink-0">
+                <div class="flex items-center justify-center flex-shrink-0 pb-6 landscape:pb-0">
                     <button id="shutter-btn" class="w-20 h-20 md:w-24 md:h-24 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center border-4 border-white shadow-xl hover:bg-white/80 active:scale-90 transition-all duration-200">
                         <div class="w-14 h-14 md:w-16 md:h-16 bg-pink-400 rounded-full shadow-inner border-2 border-pink-300"></div>
                     </button>
@@ -202,26 +202,26 @@
             </div>
         </header>
 
-        <div class="flex-1 flex flex-col items-center justify-center p-4 md:p-8 w-full mx-auto max-w-3xl gap-6">
-            <div class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center md:items-start shadow-xl relative overflow-hidden w-full">
+        <div class="flex-1 flex flex-col items-center justify-start p-4 md:p-8 w-full mx-auto max-w-3xl gap-4 pb-28 overflow-y-auto min-h-0">
+            <div class="glass-panel rounded-3xl p-5 md:p-8 flex flex-col md:flex-row gap-5 items-center md:items-start shadow-xl relative overflow-hidden w-full max-h-[75vh] md:max-h-none overflow-y-auto">
                 <!-- ホロメン公式イラスト画像 (public/ホロメン/名前/名前.png) -->
-                <div class="w-48 md:w-64 aspect-[3/4] bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl flex flex-col items-center justify-center border-2 border-white shadow-inner shrink-0 relative overflow-hidden mx-auto md:mx-0">
-                    <img id="captured-snapshot" class="absolute inset-0 w-full h-full object-cover hidden" alt="Holomen Image">
+                <div class="w-36 md:w-64 aspect-[3/4] bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl flex flex-col items-center justify-center border-2 border-white shadow-inner shrink-0 relative overflow-hidden mx-auto md:mx-0">
+                    <img id="captured-snapshot" class="absolute inset-0 w-full h-full object-contain p-2 hidden" alt="Holomen Image">
                     <div id="snapshot-placeholder" class="flex flex-col items-center justify-center p-4 text-center">
-                        <i class="fa-solid fa-user text-6xl text-gray-300 mb-2"></i>
+                        <i class="fa-solid fa-user text-5xl md:text-6xl text-gray-300 mb-2"></i>
                         <span class="text-xs text-gray-400 font-bold">IMAGE AREA</span>
                     </div>
                 </div>
 
                 <!-- プロフィール詳細 -->
-                <div class="flex-1 w-full flex flex-col gap-4">
+                <div class="flex-1 w-full flex flex-col gap-3 md:gap-4">
                     <div>
-                        <div id="detail-badge" class="inline-block px-3 py-1 bg-pink-100 text-pink-500 rounded-full text-xs font-bold mb-2">AI一致度: 95%</div>
-                        <h2 id="detail-name" class="text-2xl md:text-3xl font-black text-gray-800">ときのそら</h2>
-                        <p id="detail-sub" class="text-sm text-gray-500 font-bold">0期生</p>
+                        <div id="detail-badge" class="inline-block px-3 py-1 bg-pink-100 text-pink-500 rounded-full text-xs font-bold mb-1 md:mb-2">AI一致度: 95%</div>
+                        <h2 id="detail-name" class="text-xl md:text-3xl font-black text-gray-800">ときのそら</h2>
+                        <p id="detail-sub" class="text-xs md:text-sm text-gray-500 font-bold">0期生</p>
                     </div>
 
-                    <div class="bg-white/50 rounded-2xl p-4 border border-white flex flex-col gap-3 text-sm">
+                    <div class="bg-white/50 rounded-2xl p-3 md:p-4 border border-white flex flex-col gap-2 md:gap-3 text-xs md:text-sm">
                         <div class="flex items-center justify-between font-bold text-gray-600">
                             <span>誕生日</span>
                             <span id="info-birthday" class="text-gray-800">5月15日</span>
@@ -236,15 +236,15 @@
                         </div>
                     </div>
 
-                    <div class="pt-2">
-                        <p id="detail-description" class="text-sm text-gray-600 leading-relaxed">
+                    <div class="pt-1 md:pt-2">
+                        <p id="detail-description" class="text-xs md:text-sm text-gray-600 leading-relaxed">
                             ホロライブの記念すべき最初のメンバー。歌とファンを何よりも大切にする、みんなの大好きなアイドル。
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="flex w-full justify-center items-center mt-2">
+            <div class="flex w-full justify-center items-center mt-2 shrink-0">
                 <button id="re-capture-btn" class="relative inline-flex items-center justify-center px-8 py-3 font-bold text-white bg-gradient-to-r from-blue-400 to-pink-400 rounded-full shadow-lg hover:from-blue-500 hover:to-pink-500 focus:outline-none focus:ring-4 focus:ring-pink-300 transition-all duration-300 w-full max-w-sm">
                     <i class="fa-solid fa-camera mr-2"></i>もう一度撮影する
                 </button>
@@ -297,8 +297,8 @@
             </button>
             
             <!-- 画像表示領域 -->
-            <div class="w-44 md:w-56 aspect-[3/4] bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl flex flex-col items-center justify-center border-2 border-white shadow-inner shrink-0 relative overflow-hidden mx-auto md:mx-0">
-                <img id="zukan-modal-img" class="absolute inset-0 w-full h-full object-cover hidden" alt="Holomen Image">
+            <div class="w-40 md:w-56 aspect-[3/4] bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl flex flex-col items-center justify-center border-2 border-white shadow-inner shrink-0 relative overflow-hidden mx-auto md:mx-0">
+                <img id="zukan-modal-img" class="absolute inset-0 w-full h-full object-contain p-2 hidden" alt="Holomen Image">
                 <div id="zukan-modal-placeholder" class="flex flex-col items-center justify-center p-4 text-center">
                     <i class="fa-solid fa-user text-5xl text-gray-300 mb-2"></i>
                     <span class="text-xs text-gray-400 font-bold">IMAGE AREA</span>
@@ -372,7 +372,7 @@
             "AZKi": { name: "AZKi", generation: "0期生", birthday: "4月12日", debut: "2018年11月15日", height: "158cm", unit: "ソロ", desc: "圧倒的な歌唱力を持つバーチャルシンガー。優しく透き通る歌声で、聴く人すべての心を揺さぶる。", img: "https://hololive.tv" },
             "大神ミオ": { name: "大神ミオ", generation: "ゲーマーズ", birthday: "8月20日", debut: "2018年12月7日", height: "165cm", unit: "ホロライブゲーマーズ", desc: "どこか神社に現れた黒髪のケモミミ少女。タロット占いも得意な、ホロライブのみんなを包み込む優しいお母さん。", img: "https://hololive.tv" },
             "さくらみこ": { name: "さくらみこ", generation: "0期生", birthday: "3月5日", debut: "2018年8月1日", height: "152cm", unit: "ソロ", desc: "電脳桜神社に仕えるエリート巫女。たいへんエリートなポンコツっぷりで、みんなを笑顔にする天才。", img: "https://hololive.tv" },
-            "猫又おかゆ": { name: "猫mataおかゆ", generation: "ゲーマーズ", birthday: "2月22日", debut: "2019年4月1日", height: "152cm", unit: "ホロライブゲーマーズ", desc: "おにぎり屋のおばあちゃんに飼われている猫。自由気ままで、人を惹きつける最高にエロエロで優しいイケボの持ち主。", img: "https://hololive.tv" },
+            "猫mataおかゆ": { name: "猫mataおかゆ", generation: "ゲーマーズ", birthday: "2月22日", debut: "2019年4月1日", height: "152cm", unit: "ホロライブゲーマーズ", desc: "おにぎり屋のおばあちゃんに飼われている猫。自由気ままで、人を惹きつける最高にエロエロで優しいイケボの持ち主。", img: "https://hololive.tv" },
             "戌神ころね": { name: "戌神ころね", generation: "ゲーマーズ", birthday: "10月1日", debut: "2019年4月13日", height: "156cm", unit: "ホロライブゲーマーズ", desc: "都会にあるパン屋さんにいる犬。レトロゲームへの深い愛と、終わらない超耐久配信で世界を驚かせる狂犬（可愛い）。", img: "https://hololive.tv" },
             "星街すいせい": { name: "星街すいせい", generation: "0期生", birthday: "3月22日", debut: "2018年3月22日", height: "160cm", unit: "ソロ", desc: "歌とアイドルを愛する永遠の18歳。圧倒的な歌唱力と、テトリスの神業、 tenderで時折見せるサイコパスな魅力が最高。", img: "https://hololive.tv" },
             "兎田ぺこら": { name: "兎田ぺこら", generation: "3期生", birthday: "1月12日", debut: "2019年7月17日", height: "153cm", unit: "3期生", desc: "寂しがり屋なバニーガール族の女の子。特徴的な笑い声と、視聴者とのバチバチの掛け合いが最高に面白い世界一の配信者。", img: "https://hololive.tv" },
@@ -523,7 +523,7 @@
                 // 該当する期生のメンバーをフィルタリング
                 Object.keys(holomenData).forEach(key => {
                     const data = holomenData[key];
-                    if (data.generation === gen) {
+                    if (data.generation.includes(gen)) {
                         const isUnlocked = unlockedHolomen[key];
                         const card = document.createElement('div');
                         

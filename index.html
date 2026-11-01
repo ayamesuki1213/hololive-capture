@@ -528,8 +528,9 @@
                         const isUnlocked = unlockedHolomen[key];
                         const card = document.createElement('div');
                         
+                        // 解放・未解放共通でまったく同じカードフレーム構造（サイズ統一）
                         if (isUnlocked) {
-                            // 解放済みのカード（横2マスに最適化されたサイズ）
+                            // 解放済みのカード
                             const iconPath = `public/ホロメンアイコン/${data.name}/${data.name}.png`;
                             card.className = 'bg-white/90 backdrop-blur-sm border border-pink-100 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer overflow-hidden flex flex-col p-3 items-center text-center justify-center';
                             card.style.aspectRatio = '4 / 3';
@@ -543,14 +544,14 @@
                             // 解放済みの場合はタップで詳細モーダルを表示
                             card.addEventListener('click', () => openZukanModal(data));
                         } else {
-                            // 未解放のカード（横2マスに最適化されたサイズ）
+                            // 未解放のカード（解放カードと完全に同じサイズ・構造）
                             card.className = 'bg-gray-100/70 border border-dashed border-gray-300 rounded-2xl flex flex-col p-3 items-center text-center justify-center select-none opacity-60';
                             card.style.aspectRatio = '4 / 3';
                             card.innerHTML = `
-                                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gray-200 mb-1.5 flex items-center justify-center shadow-inner text-gray-400">
+                                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gray-200 mb-1.5 flex items-center justify-center shadow-inner text-gray-400 border border-gray-300">
                                     <i class="fa-solid fa-lock text-xl"></i>
                                 </div>
-                                <h3 class="font-bold text-gray-400 text-xs sm:text-sm mb-0.5">???</h3>
+                                <h3 class="font-bold text-gray-400 text-xs sm:text-sm mb-0.5 line-clamp-1">???</h3>
                                 <p class="text-[10px] sm:text-xs text-gray-400 font-medium">未開放</p>
                             `;
                         }

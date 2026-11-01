@@ -154,7 +154,7 @@
             </div>
 
             <div id="camera-ui" class="hidden w-full h-full flex flex-col landscape:flex-row items-center justify-center gap-6 landscape:gap-10">
-                <div id="camera-container" class="w-full max-w-3xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl relative border-4 border-white/50 shrink min-h-0">
+                <div id="camera-container" class="w-full max-w-3xl aspect-[3/4] sm:aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl relative border-4 border-white/50 shrink min-h-0 max-h-[60vh] md:max-h-[70vh]">
                     <video id="camera-feed" class="w-full h-full object-cover" autoplay playsinline muted></video>
                     <canvas id="snapshot-canvas" class="hidden"></canvas>
                     <div class="absolute inset-0 pointer-events-none flex flex-col justify-between p-4 z-10">
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 
-                <div class="flex items-center justify-center flex-shrink-0">
+                <div class="flex items-center justify-center flex-shrink-0 pb-6 landscape:pb-0">
                     <button id="shutter-btn" class="w-20 h-20 md:w-24 md:h-24 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center border-4 border-white shadow-xl hover:bg-white/80 active:scale-90 transition-all duration-200">
                         <div class="w-14 h-14 md:w-16 md:h-16 bg-pink-400 rounded-full shadow-inner border-2 border-pink-300"></div>
                     </button>

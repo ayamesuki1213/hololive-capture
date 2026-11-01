@@ -528,7 +528,7 @@
                         const card = document.createElement('div');
                         
                         if (isUnlocked) {
-                            // 解放済みのカード
+                            // 解放済みのカード（未解放カードと同じサイズ・レイアウトに統一）
                             const iconPath = `public/ホロメンアイコン/${data.name}/${data.name}.png`;
                             card.className = 'bg-white/90 backdrop-blur-sm border border-pink-100 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer overflow-hidden flex flex-col p-4 items-center text-center justify-center';
                             card.style.aspectRatio = '4 / 3';
@@ -536,8 +536,7 @@
                                 <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-blue-100 to-pink-100 mb-2 flex items-center justify-center shadow-inner overflow-hidden border border-pink-200">
                                     <img src="${iconPath}" alt="${data.name}" class="w-full h-full object-cover" onerror="this.onerror=null; this.remove(); this.parentElement.innerHTML='<i class=\\'fa-solid fa-star text-pink-400 md:text-xl\\'></i>';">
                                 </div>
-                                <h3 class="font-bold text-gray-800 text-sm md:text-base mb-1">${data.name}</h3>
-                                <p class="text-xs text-pink-400 font-bold">詳細を見る</p>
+                                <h3 class="font-bold text-gray-800 text-sm md:text-base">${data.name}</h3>
                             `;
                             // 解放済みの場合はタップで詳細モーダルを表示
                             card.addEventListener('click', () => openZukanModal(data));

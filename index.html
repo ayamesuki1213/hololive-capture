@@ -206,8 +206,8 @@
         <div class="flex-1 flex flex-col items-center justify-start p-4 md:p-8 w-full mx-auto max-w-3xl gap-4 pb-28 overflow-y-auto min-h-0">
             <div class="glass-panel rounded-3xl p-5 md:p-8 flex flex-col md:flex-row gap-5 items-center md:items-start shadow-xl relative w-full overflow-y-auto max-h-[70vh] md:max-h-none">
                 <!-- ホロメン公式イラスト画像 (public/ホロメン/名前/名前.png) -->
-                <div class="w-36 md:w-64 aspect-[3/4] bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl flex flex-col items-center justify-center border-2 border-white shadow-inner shrink-0 relative overflow-hidden mx-auto md:mx-0">
-                    <img id="captured-snapshot" class="absolute inset-0 w-full h-full object-contain p-2 hidden" alt="Holomen Image">
+                <div class="w-40 md:w-64 aspect-[3/4] bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl flex flex-col items-center justify-center border-2 border-white shadow-inner shrink-0 relative overflow-hidden mx-auto md:mx-0">
+                    <img id="captured-snapshot" class="absolute inset-0 w-full h-full object-contain p-0.5 hidden" alt="Holomen Image">
                     <div id="snapshot-placeholder" class="flex flex-col items-center justify-center p-4 text-center">
                         <i class="fa-solid fa-user text-5xl md:text-6xl text-gray-300 mb-2"></i>
                         <span class="text-xs text-gray-400 font-bold">IMAGE AREA</span>
@@ -297,9 +297,9 @@
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             
-            <!-- 画像表示領域 -->
-            <div class="w-40 md:w-56 aspect-[3/4] bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl flex flex-col items-center justify-center border-2 border-white shadow-inner shrink-0 relative overflow-hidden mx-auto md:mx-0">
-                <img id="zukan-modal-img" class="absolute inset-0 w-full h-full object-contain p-2 hidden" alt="Holomen Image">
+            <!-- 画像表示領域（余白を最小化してキャラクターを枠内で大きく表示） -->
+            <div class="w-48 md:w-60 aspect-[3/4] bg-gradient-to-br from-blue-100 to-pink-100 rounded-2xl flex flex-col items-center justify-center border-2 border-white shadow-inner shrink-0 relative overflow-hidden mx-auto md:mx-0">
+                <img id="zukan-modal-img" class="absolute inset-0 w-full h-full object-contain p-0.5 hidden" alt="Holomen Image">
                 <div id="zukan-modal-placeholder" class="flex flex-col items-center justify-center p-4 text-center">
                     <i class="fa-solid fa-user text-5xl text-gray-300 mb-2"></i>
                     <span class="text-xs text-gray-400 font-bold">IMAGE AREA</span>
